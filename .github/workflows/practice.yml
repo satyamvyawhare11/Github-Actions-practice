@@ -1,0 +1,23 @@
+name: Multi job CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Building..."
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Testing..."
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - run: echo "Deploying..."
