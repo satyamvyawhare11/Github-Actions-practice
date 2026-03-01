@@ -1,8 +1,8 @@
 name: Hello Dosto!
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
+    
 
 jobs:
   greet:
