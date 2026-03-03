@@ -1,0 +1,25 @@
+name: Hello Workflow
+
+on: push
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print message
+        run: echo "Hello from GitHub Actions!"
+
+      - name: Print date
+        run: date
+
+      - name: Print branch
+        run: echo ${{ github.ref_name }}
+
+      - name: List files
+        run: ls -la
+
+      - name: Print OS
+        run: uname -a
