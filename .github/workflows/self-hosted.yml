@@ -1,0 +1,33 @@
+name: Self Hosted Runner Test
+
+on: 
+  workflow_dispatch: 
+
+jobs:
+  test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Print hostname
+        run: hostname
+
+      - name: Show Directory 
+        run: pwd
+
+      - name: Creat file
+        run: echo "Hello from self hosted runner" >> test.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
