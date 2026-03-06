@@ -1,0 +1,37 @@
+name: Hosted Runner Test
+
+on: push
+
+jobs:
+  ubuntu-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "OS"
+          uname -a
+          echo "Hostname"
+          hostname
+          echo "User"
+          whoami
+
+  windows-job:
+    runs-on: windows-latest
+    steps:
+      - run: |
+          echo OS:
+          systeminfo | findstr /B /C:"OS Name"
+          echo Hostname:
+          hostname
+          echo User:
+          whoami
+
+  macos-job:
+    runs-on: macos-latest
+    steps:
+      - run: |
+          echo "OS"
+          uname -a
+          echo "Hostname"
+          hostname
+          echo "User"
+          whoami
